@@ -75,5 +75,9 @@ public class EratosthenesPrimeSieve {
             System.out.println(i);
         }
     }
+    
+    public static List<Integer> getPrimes(){
+        return primes;
+    }
 
 }
