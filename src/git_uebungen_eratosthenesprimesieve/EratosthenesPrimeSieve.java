@@ -5,21 +5,53 @@
  */
 package git_uebungen_eratosthenesprimesieve;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author matth
  */
 public class EratosthenesPrimeSieve {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    public interface PrimeSieve {
-        public boolean isPrime (int p);
-        public void printPrimes();
+    public EratosthenesPrimeSieve(int border) {
+        generateNumbers(border);
     }
     
+    
+//    public static void main(String[] args){
+//        List<Integer> prims = generateNumbers(10);
+//        
+//        for (int i : prims){
+//            System.out.println(i);
+//        }
+//    }
+
+    
+    
+    public static List<Integer> generateNumbers(int border) {
+        List<Integer> finalList = new ArrayList();
+        boolean[] bool = new boolean[border];
+
+        for (int i = 0; i < bool.length; i++) {
+            bool[i] = true;
+        }
+        for (int i = 2; i < Math.sqrt(border); i++) {
+            if (bool[i] == true) {
+                for (int j = (i * i); j < border; j = j + i) {
+                    bool[j] = false;
+                }
+            }
+        }
+
+        for (int i = 2; i < bool.length; i++) {
+            if (bool[i] == true) {
+                finalList.add(i);
+            }
+        }
+
+        return finalList;
+
+    }
+
 }
