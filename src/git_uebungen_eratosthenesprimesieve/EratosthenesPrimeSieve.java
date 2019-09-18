@@ -13,9 +13,11 @@ import java.util.List;
  * @author matth
  */
 public class EratosthenesPrimeSieve {
-
+    private static List<Integer> prims;
+    
+    
     public EratosthenesPrimeSieve(int border) {
-        generateNumbers(border);
+        prims = generateNumbers(border);
     }
     
     
@@ -66,6 +68,12 @@ public class EratosthenesPrimeSieve {
             }
         }
         return true;
+    }
+    
+    public static void printPrimes(){
+        for (int i : prims){
+            System.out.println(i);
+        }
     }
 
 }
