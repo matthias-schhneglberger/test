@@ -33,8 +33,10 @@ public class Main {
             }
         }while(!valid);
 
-        showNums(num);
-        
+        //showNums(num);
+        for (int i = num; i >= 2; i = i-2){
+            showNums(i);
+        }
         
         
         
@@ -51,6 +53,7 @@ public class Main {
         for (int prime : primes){
             if (primeSieve.isPrime(num-prime)){
                 System.out.println(num + " = " + prime + " + " + (num - prime));
+                break;
             }
         }
     }
