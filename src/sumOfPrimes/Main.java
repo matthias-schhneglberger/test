@@ -23,7 +23,7 @@ public class Main {
         int num;
         boolean valid = false;
         do{
-            System.out.println("Gibt eine Zahl ein:");
+            System.out.println("Gibt eine Zahl groeßer 2 und gerade ein:");
             num = s.nextInt();
             
             if (num > 2 && num % 2 == 0){
