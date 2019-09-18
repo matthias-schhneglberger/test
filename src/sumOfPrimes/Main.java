@@ -7,6 +7,7 @@ package sumOfPrimes;
 
 import java.util.Scanner;
 import git_uebungen_eratosthenesprimesieve.*;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -34,7 +35,7 @@ public class Main {
         }while(!valid);
 
         //showNums(num);
-        for (int i = num; i >= 2; i = i-2){
+        for (int i = 0; i <= num; i = i+2){
             showNums(i);
         }
         
@@ -49,7 +50,7 @@ public class Main {
         List<Integer> primes = primeSieve.getPrimes();
         
         //primeSieve.printPrimes();
-        
+        Collections.reverse(primes);
         for (int prime : primes){
             if (primeSieve.isPrime(num-prime)){
                 System.out.println(num + " = " + prime + " + " + (num - prime));
