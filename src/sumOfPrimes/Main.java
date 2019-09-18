@@ -53,7 +53,7 @@ public class Main {
         Collections.reverse(primes);
         for (int prime : primes){
             if (primeSieve.isPrime(num-prime)){
-                System.out.println(num + " = " + prime + " + " + (num - prime));
+                System.out.println(num + " = " + (num - prime) + " + " + prime);
                 break;
             }
         }
