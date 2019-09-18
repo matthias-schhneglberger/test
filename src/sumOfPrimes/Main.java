@@ -33,14 +33,25 @@ public class Main {
             }
         }while(!valid);
 
+        showNums(num);
         
         
         
-        EratosthenesPrimeSieve generator = new EratosthenesPrimeSieve(num);
-        
-        List<Integer> primes = generator.getPrimes();
         
         
+    }
+    
+    public static void showNums(int num){
+        EratosthenesPrimeSieve primeSieve = new EratosthenesPrimeSieve(num);
         
+        List<Integer> primes = primeSieve.getPrimes();
+        
+        //primeSieve.printPrimes();
+        
+        for (int prime : primes){
+            if (primeSieve.isPrime(num-prime)){
+                System.out.println(num + " = " + prime + " + " + (num - prime));
+            }
+        }
     }
 }
